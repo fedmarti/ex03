@@ -11,21 +11,38 @@
 			background-image: url("https://cdn.openart.ai/uploads/image_TVV2mZBf_1679611255706_512.webp");
 			display: flex;
 			justify-content: center;
+			flex-wrap: wrap;
+			flex-direction: column;
+			align-items: center;
 		}
 		label {
 			order: 1;
+			outline: invert 1px;
+			color: white;
 		}
-		.ft_list
+		#ft_list
 		{
 			order: 2;
 			border-radius: 3vh;
-			width: 33vw;
 			min-width: 300px;
 			min-height: 400px;
-			height: 40vh;
+			max-width: 90%;
 			background-color: rgb(103, 255, 197);
+			overflow-x: unset;
+			overflow-wrap: break-word;
+		}
+		.task{
+			text-align: center;
+			margin: 3%;
+			border-radius: 3vh;
+		}
+		.task:hover{
+			transition: .3s;
+			background-color: white;
+			cursor: pointer;
 		}
 		button {
+			background-color: rgb(90, 196, 155);
 			border-radius: .5vh;
 			border-collapse: collapse;
 			order: 3;
@@ -33,9 +50,10 @@
 		}
 	</style>
 </head>
-<body>
-	<div class="ft_list">
+<body onload="ft_ready()">
+	<label>To do</label>
+	<div id="ft_list">
 	</div>
-	<button onclick="new_task()">New</button>
+	<button onclick="create_task()">New</button>
 </body>
 </html>
